@@ -1,7 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "pretest": "standard",
+    "pretest": "npm run lint",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint \"**/*.js\"",
+    "lint:prettier": "prettier --check \"**/*{md,html,css,js,json}\"",
+    "format": "prettier --write \"**/*{md,html,css,js,json}\"",
     "test": "mocha spec/**/*.js",
     "start": "brunch watch --server",
     "build": "brunch build --production"
@@ -14,9 +18,10 @@
     "brunch": "^4.0.0",
     "clean-css-brunch": "^3.0.0",
     "css-brunch": "^2.10.0",
+    "eslint": "^7.13.0",
     "javascript-brunch": "^2.10.0",
-    "mocha": "^8.3.1",
-    "standard": "^16.0.3",
+    "mocha": "^8.4.0",
+    "prettier": "^2.3.0",
     "uglify-js-brunch": "^2.10.0"
   },
   "standard": {

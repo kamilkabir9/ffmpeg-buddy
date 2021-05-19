@@ -1,3 +1,3 @@
 module.exports = function (v) {
-  return v[v.length - 1]
-}
+  return v[v.length - 1];
+};
