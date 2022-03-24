@@ -3,9 +3,9 @@
   "scripts": {
     "pretest": "npm run lint",
     "lint": "npm run lint:eslint && npm run lint:prettier",
-    "lint:eslint": "eslint \"**/*.js\"",
-    "lint:prettier": "prettier --check \"**/*{md,html,css,js,json}\"",
-    "format": "prettier --write \"**/*{md,html,css,js,json}\"",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check .",
+    "format": "prettier --write .",
     "test": "mocha spec/**/*.js",
     "start": "brunch watch --server",
     "build": "brunch build --production"
