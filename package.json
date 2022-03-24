@@ -1,27 +1,17 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "pretest": "npm run lint",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
     "format": "prettier --write .",
-    "test": "mocha spec/**/*.js",
-    "start": "brunch watch --server",
-    "build": "brunch build --production"
-  },
-  "dependencies": {
-    "knockout": "^3.5.1",
-    "knockout-es5": "^0.4.5"
+    "test": "ava"
   },
   "devDependencies": {
-    "brunch": "^4.0.0",
-    "clean-css-brunch": "^3.0.0",
-    "css-brunch": "^2.10.0",
+    "ava": "^4.1.0",
     "eslint": "^8.11.0",
-    "javascript-brunch": "^2.10.0",
-    "mocha": "^9.2.2",
-    "prettier": "^2.6.0",
-    "uglify-js-brunch": "^2.10.0"
+    "prettier": "^2.6.0"
   }
 }
