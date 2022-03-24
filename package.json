@@ -18,10 +18,10 @@
     "brunch": "^4.0.0",
     "clean-css-brunch": "^3.0.0",
     "css-brunch": "^2.10.0",
-    "eslint": "^8.0.0",
+    "eslint": "^8.11.0",
     "javascript-brunch": "^2.10.0",
-    "mocha": "^9.1.2",
-    "prettier": "^2.4.1",
+    "mocha": "^9.2.2",
+    "prettier": "^2.6.0",
     "uglify-js-brunch": "^2.10.0"
   },
   "standard": {
