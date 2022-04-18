@@ -21,7 +21,8 @@ function render() {
     if (framerate) {
       videoFlags.push(`-r ${framerate}`);
     }
-    if (rotation !== "no rotation") { videoFlags.push(rotation);
+    if (rotation !== "no rotation") {
+      videoFlags.push(rotation);
     }
   } else {
     videoFlags.push("-vn");
