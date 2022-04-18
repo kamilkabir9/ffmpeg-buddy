@@ -36,8 +36,8 @@ function render() {
     quoteFilename(inputFilename),
     ...videoFlags,
     ...(hasAudio ? [] : ["-an"]),
-    ...(startAt ? `-ss '${startAt}'` : []),
-    ...(endAt ? `-to '${endAt}'` : []),
+    ...(startAt ? [`-ss '${startAt}'`] : []),
+    ...(endAt ? [`-to '${endAt}'`] : []),
     quoteFilename(outputFilename),
   ].join(" ");
 
