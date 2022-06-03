@@ -42,6 +42,8 @@ function render() {
     quoteFilename(outputFilename),
   ].join(" ");
 
+  document.getElementById("Copy").textContent="Copy"; //reset copy button text on input change.
+
   for (const el of document.getElementsByClassName("needs-video")) {
     if (hasVideo) {
       el.removeAttribute("hidden");
@@ -59,3 +61,9 @@ formEl.addEventListener("submit", (event) => {
 });
 
 render();
+
+// Copy to clipboard ffmpeg build command 
+var clipboard = new ClipboardJS('#Copy');
+clipboard.on('success', function(e) {
+  document.getElementById("Copy").textContent="copied :)";  
+});
