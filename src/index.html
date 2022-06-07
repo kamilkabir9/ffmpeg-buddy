@@ -6,7 +6,6 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="pure-min.css" />
     <link rel="stylesheet" href="index.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
   </head>
   <body>
     <h1>ffmpeg buddy</h1>
@@ -14,15 +13,19 @@
       a friend to help you build
       <a href="https://ffmpeg.org/">ffmpeg</a> commands
     </h2>
-    
+
     <div class="pure-g">
-      <div class="pure-u-3-4"> <pre id="outputEl"># loading... </pre>     </div>
-      <div class="pure-u-1-4" style="margin-top: 1em;">  <button id="Copy" class="button-large pure-button" title="Copy to clipboard"  style="padding-top: 1em;padding-bottom: 1em;" data-clipboard-target="#outputEl">Copy
-      </button> </div>
-  </div>
-
-  
-
+      <div class="pure-u-3-4"><pre id="outputEl"># loading... </pre></div>
+      <div class="pure-u-1-4">
+        <button
+          id="copyEl"
+          class="button-large pure-button"
+          title="Copy to clipboard"
+        >
+          Copy
+        </button>
+      </div>
+    </div>
 
     <form id="formEl" class="pure-form pure-form-aligned">
       <fieldset>

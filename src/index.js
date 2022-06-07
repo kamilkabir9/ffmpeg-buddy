@@ -1,4 +1,4 @@
-/* global outputEl, formEl, inputFilenameEl, outputFilenameEl, disableVideoEl, disableAudioEl, scaleWidthEl, scaleHeightEl, framerateEl, rotateEl, startAtEl, endAtEl */
+/* global outputEl, formEl, inputFilenameEl, outputFilenameEl, disableVideoEl, disableAudioEl, scaleWidthEl, scaleHeightEl, framerateEl, rotateEl, startAtEl, endAtEl, copyEl */
 
 import quoteFilename from "./lib/quote-filename.js";
 import getScaleFlag from "./lib/get-scale-flag.js";
@@ -42,7 +42,7 @@ function render() {
     quoteFilename(outputFilename),
   ].join(" ");
 
-  document.getElementById("Copy").textContent="Copy"; //reset copy button text on input change.
+  copyEl.textContent = "Copy"; //reset copy button text on input change.
 
   for (const el of document.getElementsByClassName("needs-video")) {
     if (hasVideo) {
@@ -62,8 +62,18 @@ formEl.addEventListener("submit", (event) => {
 
 render();
 
-// Copy to clipboard ffmpeg build command 
-var clipboard = new ClipboardJS('#Copy');
-clipboard.on('success', function(e) {
-  document.getElementById("Copy").textContent="copied :)";  
-});
+// Copy ffmpeg build command to clipboard
+copyEl.onclick = function () {
+  navigator.clipboard.writeText(outputEl.textContent).then(
+    function () {
+      console.debug("copied to clipboard");
+      copyEl.textContent = "Copied";
+      setTimeout(() => {
+        copyEl.textContent = "Copy";
+      }, 1000);
+    },
+    function () {
+      console.error("Error wrtting to clipboard");
+    }
+  );
+};
